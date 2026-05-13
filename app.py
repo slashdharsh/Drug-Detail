@@ -204,12 +204,12 @@ def make_pdf(d: dict, drug_name: str) -> bytes:
                             leftMargin=18*mm, rightMargin=18*mm,
                             topMargin=16*mm, bottomMargin=16*mm)
 
-    def sty(name, **kw):
-        return ParagraphStyle(name, fontName='Helvetica', **kw)
+    def sty(name, font='Helvetica', **kw):
+        return ParagraphStyle(name, fontName=font, **kw)
 
-    title_sty  = sty('T',  fontName='Helvetica-Bold', fontSize=20, textColor=WHITE, leading=26)
+    title_sty  = sty('T',  font='Helvetica-Bold', fontSize=20, textColor=WHITE, leading=26)
     brand_sty  = sty('Br', fontSize=9,  textColor=colors.HexColor('#85B7EB'), leading=14)
-    label_sty  = sty('L',  fontName='Helvetica-Bold', fontSize=7.5,
+    label_sty  = sty('L',  font='Helvetica-Bold', fontSize=7.5,
                      textColor=BLUE, leading=11, spaceAfter=3)
     body_sty   = sty('Bo', fontSize=8.5, textColor=DARK, leading=13)
     warn_sty   = sty('W',  fontSize=8.5, textColor=colors.HexColor('#791F1F'), leading=13)
